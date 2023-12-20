@@ -55,39 +55,31 @@ const { NotImplementedError } = require('../extensions/index.js');
 //   }
 // }
 
-function removeKFromList(/* l, k */) {
-  // function findAndRemoveElement(l, k) {
-  //   let current = l.head;
-  //   let prev = null;
-  //   let indexK = 0;
+function removeKFromList(l, k) {
+  let current = l;
+  let prev = null;
 
-  //   while(current) {
-  //     if (current.value === k) {
-  //       if (prev === null) {
-  //         l.head = current.next;
-  //       } else {
-  //         prev.next = current.next;
-  //       }
-  //       l.length--;
-  //       return indexK;
-  //     }
-  //     prev = current;
-  //     current = current.next;
-  //     indexK++;
-  //   }
-  //   // l.length--;
-  //   return -1;
-  // }
+  while (current) {
+    if (current.value === k) {
+      if (prev === null) {
+        l = current.next;
+      } else {
+        prev.next = current.next;
+      }
+    } else {
+      prev = current;
+    }
+    current = current.next;
+  }
 
-  // let index;
-  // while ((index = findAndRemoveElement(l, k)) !== -1) {
-  //   findAndRemoveElement(l, k);
-  // }
-  // return l;
+  return l;
 
-  throw new NotImplementedError('Not implemented');
+  // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 }
+
+
+// node src/remove-from-list.js
 
 
 
